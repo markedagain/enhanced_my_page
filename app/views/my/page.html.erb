@@ -10,6 +10,7 @@
     <% if b.include?('query') %>
       <%= render :partial => "my/blocks/query", :locals => { :user => @user, :query_id => b.sub(/^(query)/,'')} %>
     <% else %>
+     <% next unless MyController::BLOCKS.keys.include? b  %>
       <%= render :partial => "my/blocks/#{b}", :locals => { :user => @user } %>
     <% end %>
   </div>
@@ -22,6 +23,7 @@
     <% if b.include?('query') %>
       <%= render :partial => "my/blocks/query", :locals => { :user => @user, :query_id => b.sub(/^(query)/,'')} %>
     <% else %>
+     <% next unless MyController::BLOCKS.keys.include? b  %>
       <%= render :partial => "my/blocks/#{b}", :locals => { :user => @user } %>
     <% end %>
   </div>
@@ -34,6 +36,7 @@
     <% if b.include?('query') %>
       <%= render :partial => "my/blocks/query", :locals => { :user => @user, :query_id => b.sub(/^(query)/,'')} %>
     <% else %>
+     <% next unless MyController::BLOCKS.keys.include? b  %>
       <%= render :partial => "my/blocks/#{b}", :locals => { :user => @user } %>
     <% end %>
   </div>

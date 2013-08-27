@@ -18,6 +18,7 @@
     <% if b.include?('query') %>
       <%= render :partial => "query_block", :locals => { :user => @user, :block_name => 'query', :query_id => b.sub(/^(query)/,'')} %>
     <% else %>
+    <% next unless MyController::BLOCKS.keys.include? b %>
       <%= render :partial => 'block', :locals => {:user => @user, :block_name => b} %>
     <% end %>
   <% end if @blocks['top'] %>
@@ -28,6 +29,7 @@
     <% if b.include?('query') %>
       <%= render :partial => "query_block", :locals => { :user => @user, :block_name => 'query', :query_id => b.sub(/^(query)/,'')} %>
     <% else %>
+    <% next unless MyController::BLOCKS.keys.include? b %>
       <%= render :partial => 'block', :locals => {:user => @user, :block_name => b} %>
     <% end %>
   <% end if @blocks['left'] %>
@@ -38,6 +40,7 @@
     <% if b.include?('query') %>
       <%= render :partial => "query_block", :locals => { :user => @user, :block_name => 'query', :query_id => b.sub(/^(query)/,'')} %>
     <% else %>
+    <% next unless MyController::BLOCKS.keys.include? b %>
       <%= render :partial => 'block', :locals => {:user => @user, :block_name => b} %>
     <% end %>
   <% end if @blocks['right'] %>
